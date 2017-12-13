@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+			    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xpy.domain.Cart" table="sms_cart">
+		<id name="cartId" column="cartId">
+			<generator class="native"></generator>
+		</id>
+		<version name="version"></version>
+		<property name="orderTime" column="orderTime"></property>
+		<property name="orderCount" column="orderCount"></property>
+		<property name="gPrice" column="gPrice"></property>
+		<property name="userCheck" column="userCheck"></property>
+		<property name="orderTotalPrice" column="orderTotalPrice"></property>
+		<property name="userId" column="userId"></property>
+		<property name="goodId" column="goodId"></property>
+	</class>
+</hibernate-mapping>

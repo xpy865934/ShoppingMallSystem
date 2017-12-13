@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+			    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xpy.domain.Good" table="sms_good">
+		<id name="goodId" column="goodId">
+			<generator class="native"></generator>
+		</id>
+		<version name="version"></version>
+		<property name="gName" column="gName"></property>
+		<property name="gPrice" column="gPrice"></property>
+		<property name="gTypeID" column="gTypeID"></property>
+		<property name="gIntro" column="gIntro"></property>
+		<property name="gImagePath" column="gImagePath"></property>
+		<property name="gCount" column="gCount"></property>
+		<property name="gSail" column="gSail"></property>
+		<property name="gWeight" column="gWeight"></property>
+		<property name="gDateTime" column="gDateTime"></property>
+		<property name="gSize" column="gSize"></property>
+	</class>
+</hibernate-mapping>

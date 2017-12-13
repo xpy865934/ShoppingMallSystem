@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+			    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xpy.domain.Customer" table="sms_customer">
+		<id name="userId" column="userId">
+			<generator class="native"></generator>
+		</id>
+		<version name="version"></version>
+		<property name="userName" column="userName"></property>
+		<property name="realName" column="realName"></property>
+		<property name="userPassword" column="userPassword"></property>
+		<property name="email" column="email"></property>
+		<property name="phone" column="phone"></property>
+		<property name="identityCard" column="identityCard"></property>
+		<property name="question" column="question"></property>
+		<property name="answer" column="answer"></property>
+		<property name="regTime" column="regTime"></property>
+		<property name="gradeId" column="gradeId"></property>
+		<property name="addressId" column="addressId"></property>
+	</class>
+</hibernate-mapping>

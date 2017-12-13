@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+			    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+			    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xpy.domain.Comment" table="sms_comment">
+		<id name="commentId" column="commentId">
+			<generator class="native"></generator>
+		</id>
+		<version name="version"></version>
+		<property name="content" column="content"></property>
+		<property name="title" column="title"></property>
+		<property name="userId" column="userId"></property>
+		<property name="proId" column="proId"></property>
+		<property name="commentTime" column="commentTime"></property>
+	</class>
+</hibernate-mapping>

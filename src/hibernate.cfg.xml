@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    <!-- 主配置文件 -->
+<hibernate-configuration>
+    <session-factory>
+            <!--
+                	配置的元素分两种
+                     property元素
+                         |-配置键值对属性
+                     mapping元素
+                         |- 引入ORM映射文件
+             -->           
+            <!--
+            #hibernate.dialect org.hibernate.dialect.MySQLDialect(使用)
+            #hibernate.dialect org.hibernate.dialect.MySQLInnoDBDialect
+            #hibernate.dialect org.hibernate.dialect.MySQLMyISAMDialect
+            
+            #hibernate.connection.driver_class com.mysql.jdbc.Driver
+            #hibernate.connection.url jdbc:mysql:///test
+            #hibernate.connection.username gavin
+            #hibernate.connection.password
+              -->
+            <!-- 连接相关(4大天王) -->
+            <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+            <property name="hibernate.connection.url">jdbc:mysql:///shopping_mall_system</property>
+            <property name="hibernate.connection.username">root</property>
+            <property name="hibernate.connection.password">123456</property>
+            
+            
+            <!-- 方言
+                hibernate能够自动生成SQL语句. 不同的数据库生成的sql语句语法略有不同.
+                	方言类 可以 根据数据库生成不同的部分.
+                mysql:  使用最短的.
+                oracle: 使用版本最高的
+             -->
+            <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    
+            <!--## print all generated SQL to the console
+                    #hibernate.show_sql true
+                ## format SQL in log and console
+                    hibernate.format_sql true
+                -->
+            <!-- 可选配置 -->
+            <!-- 打印hibernate生成的sql语句 -->
+            <property name="hibernate.show_sql">true</property>
+            <!-- 格式化sql(换行缩进) -->
+            <property name="hibernate.format_sql">true</property>
+            
+            <!--
+            ## auto schema export
+
+            #hibernate.hbm2ddl.auto create        每次启动Hibernate都会自动创建表结构. 小心会将数据清空的.
+            #hibernate.hbm2ddl.auto create-drop 每次启动Hibernate都会自动创建表结构.并且hibernate关闭之前回将表结构全部删除.
+            #hibernate.hbm2ddl.auto update(常用) 会自动创建表结构.如果表已经存在那么不会创建.表不一致回自动更新表结构.        
+            #hibernate.hbm2ddl.auto validate    不自动生成表.但是每次启动回检查表结构是否与配置匹配.如果不匹配就会抛出异常提示.
+            
+             -->
+            <!-- 自动生成表结构
+                    Hibernate根据实体配置自动创建表结构
+            -->
+            <property name="hibernate.hbm2ddl.auto">update</property>
+            
+            <!--
+            #hibernate.connection.provider_class org.hibernate.connection.C3P0ConnectionProvider
+             -->
+             <!--  配置hibernate使用哪个连接池 -->
+            <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+            
+            <!--
+            #hibernate.c3p0.max_size 2
+            #hibernate.c3p0.min_size 2
+            #hibernate.c3p0.timeout 5000
+             -->
+             <!-- 最大连接数 -->
+             <property name="hibernate.c3p0.max_size">5</property>
+             <!-- 最少连接数 -->
+             <property name="hibernate.c3p0.min_size">2</property>
+             <!-- 连接超时时间 -->
+             <property name="hibernate.c3p0.timeout">5000</property>
+            
+            <!-- 引入ORM配置文件 -->
+            <mapping resource="com/xpy/domain/Address.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Cart.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Category.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Comment.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Customer.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Good.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Grade.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Invoice.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Order.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Produce.hbm.xml"/>
+            <mapping resource="com/xpy/domain/Supply.hbm.xml"/>
+            
+    </session-factory>
+</hibernate-configuration> 
