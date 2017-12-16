@@ -10,4 +10,20 @@
 		<action name="test_*" class="com.xpy.test.TestAction" method="{1}">
 		</action>
 	</package>
+
+	<package name="register" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="error">404.html</result>
+			<result name="index">index.jsp</result>
+		</global-results>
+		<action name="register_*" class="com.xpy.action.RegisterAction"
+			method="{1}">
+		</action>
+	</package>
+	
+	<package name="login" namespace="/" extends="struts-default">
+		<action name="login_*" class="com.xpy.action.LoginAction"
+			method="{1}">
+		</action>
+	</package>
 </struts>

@@ -9769,10 +9769,11 @@ function double_submit() {
     if (null != e) {
         h = e.value
     }
-    var b = {"credentials.username": i, "credentials.password": c, validCode: d, sig: $("#validateSig").val(), captchaToken: h, loginSource: $("#login_source").val(), returnUrl: returnUrl, isAutoLogin: $("#isAutoLogin").val()};
-    var a = URLPrefix.passport + "/publicPassport/login.do";
+    //var b = {"credentials.username": i, "credentials.password": c, validCode: d, sig: $("#validateSig").val(), captchaToken: h, loginSource: $("#login_source").val(), returnUrl: returnUrl, isAutoLogin: $("#isAutoLogin").val()};
+    var b = {"phone": $("#un").val(), "userPassword": $("#pwd").val()};
+    var a = URLPrefix.passport + "/login_login.do";
     jQuery.post(a, b, function(o) {
-        if (o) {
+    	/*if (o) {
             if (o.errorCode != 0) {
                 $("#code_right").hide();
                 if (o.ShowValidCode == 1) {
@@ -9895,7 +9896,12 @@ function double_submit() {
                     return
                 }
             }
-        }
+        }*/
+    	if(o ==1){
+    		window.location = "index.jsp";
+    	}else{
+    		alert("用户名或密码错误！");
+    	}
         LoginUtils.button_recover()
     })
 }

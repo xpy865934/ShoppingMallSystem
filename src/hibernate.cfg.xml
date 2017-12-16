@@ -79,6 +79,8 @@
              <property name="hibernate.c3p0.min_size">2</property>
              <!-- 连接超时时间 -->
              <property name="hibernate.c3p0.timeout">5000</property>
+             <!-- 配置本地事务 -->
+            <property name="current_session_context_class">thread</property>
             
             <!-- 引入ORM配置文件 -->
             <mapping resource="com/xpy/domain/Address.hbm.xml"/>

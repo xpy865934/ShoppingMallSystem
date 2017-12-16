@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -96,7 +100,14 @@ global.vars.customInteractTime = global.vars.customInteractTime || new Date().ge
 <div data-tpa="YHD_GLOBAl_TOP_UNLOGIN" id="global_unlogin" data-addclass="hd_unlogin_hover" class="hd_unlogin_wrap">
 <div class="hd_login clearfix">
 <span class="hd_hi">Hi,</span>
-请<a rel="nofollow" id="global_top_bar_loginLink" data-ref="YHD_TOP_login" href="login.html" class="blue_link">&nbsp;登录&nbsp;</a>/<a rel="nofollow" data-ref="YHD_TOP_register" href="reg.html" class="blue_link">&nbsp;注册</a>
+<c:choose>
+<c:when test="${customer==null || empty customer }">
+请<a rel="nofollow" id="global_top_bar_loginLink" data-ref="YHD_TOP_login" href="${pageContext.request.contextPath}/login.jsp" class="blue_link">&nbsp;登录&nbsp;</a>/<a rel="nofollow" data-ref="YHD_TOP_register" href="${pageContext.request.contextPath}/reg.jsp" class="blue_link">&nbsp;注册</a>
+</c:when>
+<c:otherwise>
+	${customer.getRealName() }
+</c:otherwise>
+</c:choose>
 </div>
 <div class="hd_user_center">
 <div class="clearfix">

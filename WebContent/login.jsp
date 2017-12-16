@@ -14,7 +14,7 @@
 	var LOGIN_RESULT = {SUCCESS:0,FAIL:1};                  
 	var REGISTER_RESULT = {SUCCESS:10,FAIL:11};             
 	var DOMAIN_TYPE = {YHD:1,MALL:2,YW_111:3};              
-	var LOGIN_SOURCE={NORMAL:1,FRAME:2};                    	var URLPrefix = {"mymall":"http://my.1mall.com","passport_statics":"https://passport.yhd.com/front-passport/passport","yiwangauth":"http://mall.yiwang.cn","yaowang":"http://www.111.com.cn","tracker":"tracker.yhd.com","passport":"https://passport.yhd.com","my":"http://my.yhd.com","central":"http://www.yhd.com","validCodeShowUrl":"https://captcha.yhd.com/public/validcode.do","mall":"http://www.1mall.com","passportother":"https://passport.1mall.com"}; 
+	var LOGIN_SOURCE={NORMAL:1,FRAME:2};                    	var URLPrefix = {"mymall":"http://my.1mall.com","passport_statics":"https://passport.yhd.com/front-passport/passport","yiwangauth":"http://mall.yiwang.cn","yaowang":"http://www.111.com.cn","tracker":"tracker.yhd.com","passport":"${pageContext.request.contextPath}","my":"http://my.yhd.com","central":"http://www.yhd.com","validCodeShowUrl":"https://captcha.yhd.com/public/validcode.do","mall":"http://www.1mall.com","passportother":"https://passport.1mall.com"}; 
 	var currSiteId = 1;                         
 	
 	var returnUrl = "http://www.yhd.com/";               
@@ -61,7 +61,7 @@
 	<script type="text/javascript">
 		var no3wUrl="yhd.com";
 		var currSiteId = 1;
-		var URLPrefix = {"mymall":"http://my.1mall.com","passport_statics":"https://passport.yhd.com/front-passport/passport","yiwangauth":"http://mall.yiwang.cn","yaowang":"http://www.111.com.cn","tracker":"tracker.yhd.com","passport":"https://passport.yhd.com","my":"http://my.yhd.com","central":"http://www.yhd.com","validCodeShowUrl":"https://captcha.yhd.com/public/validcode.do","mall":"http://www.1mall.com","passportother":"https://passport.1mall.com"};
+		var URLPrefix = {"mymall":"http://my.1mall.com","passport_statics":"https://passport.yhd.com/front-passport/passport","yiwangauth":"http://mall.yiwang.cn","yaowang":"http://www.111.com.cn","tracker":"tracker.yhd.com","passport":"${pageContext.request.contextPath}","my":"http://my.yhd.com","central":"http://www.yhd.com","validCodeShowUrl":"https://captcha.yhd.com/public/validcode.do","mall":"http://www.1mall.com","passportother":"https://passport.1mall.com"};
 		var yhdUrl="http://www.yhd.com";
         var yhdPassportUrl="https://passport.yhd.com";
         var ywPassportUrl="https://passport.111.com.cn";
